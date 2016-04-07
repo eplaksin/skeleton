@@ -1,0 +1,20 @@
+{
+  "name": "skeleton",
+  "version": "1.0.0",
+  "description": "skeleton for simple frontend project",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "npm install -g browser-sync node-sass",
+    "clean": "rm -rf dist && mkdir dist",
+    "build": "npm run clean && npm run build:html && npm run build:styles && npm run build:assets",
+    "build:html": "cp src/*.html dist",
+    "build:styles": "mkdir dist/css && node-sass src/css/style.scss dist/css/style.css",
+    "build:assets": "cp -r src/images dist && cp -r src/js dist",
+    "watch": "npm run watch:sass",
+    "watch:sass": "node-sass src/css/style.scss src/css/style.css && node-sass -o src/css/ -w src/css/ &",
+    "dev": "npm run watch && browser-sync start --server \"src\" --directory --files=\"src/css/style.css, src/*.html\""
+  },
+  "author": "eplaksin <eugene.plaksin@gmail.com>",
+  "license": "MIT"
+}
