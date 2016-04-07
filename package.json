@@ -16,5 +16,9 @@
     "dev": "npm run watch && browser-sync start --server \"src\" --directory --files=\"src/css/style.css, src/*.html\""
   },
   "author": "eplaksin <me@eplaksin.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/eplaksin/skeleton.git"
+  }
 }
