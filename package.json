@@ -15,6 +15,6 @@
     "watch:sass": "node-sass src/css/style.scss src/css/style.css && node-sass -o src/css/ -w src/css/ &",
     "dev": "npm run watch && browser-sync start --server \"src\" --directory --files=\"src/css/style.css, src/*.html\""
   },
-  "author": "eplaksin <eugene.plaksin@gmail.com>",
+  "author": "eplaksin <me@eplaksin.com>",
   "license": "MIT"
 }
