@@ -11,7 +11,7 @@ help:
 	@echo "make dev       Running node-sass (on watch mode) and browser-sync to ease the developing process"
 	@echo
 
-setup: default
+setup:
 	@echo "Installing required packages..."
 	@npm install -g $(REQUIRED)
 	@echo "All packages have been successfully installed"
