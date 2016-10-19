@@ -1,11 +1,15 @@
-@import 'helpers/variables';
-@import 'helpers/mixins';
+@import "helpers/variables";
+@import "helpers/mixins";
 
-@import 'base/reset';
-@import 'base/typography';
+@import "base/reset";
+@import "base/typography";
 
-@import 'partials/grid';
-@import 'partials/header';
-@import 'partials/footer';
+@import "components/links";
 
-@import 'base/rewrite';
+@import "partials/grid";
+@import "partials/header";
+@import "partials/footer";
+
+@import "pages/main";
+
+@import "base/rewrite";
