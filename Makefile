@@ -1,6 +1,6 @@
 SRC := ./src
 DIST := ./dist
-REQUIRED := node-sass browser-sync imagemin-cli svgo postcss-cli autoprefixer cssnano
+REQUIRED := node-sass browser-sync imagemin-cli svgo postcss-cli autoprefixer csso
 
 help:
 	@echo
@@ -40,8 +40,8 @@ build-css:
 	@echo -n "Compiling SCSS files... $0"
 	@mkdir $(DIST)/css
 	@node-sass $(SRC)/css/style.scss | \
-	postcss --use autoprefixer --autoprefixer.browsers "> 1%, last 2 versions" \
-					--use cssnano -o $(DIST)/css/style.css
+		postcss --use autoprefixer --autoprefixer.browsers "> 1%, last 2 versions" | \
+		csso -o $(DIST)/css/style.css
 	@echo "Done"
 	@echo
 
