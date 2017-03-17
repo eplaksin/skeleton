@@ -1,6 +1,6 @@
 SRC := ./src
 DIST := ./dist
-REQUIRED := node-sass browser-sync imagemin-cli svgo postcss-cli autoprefixer csso
+REQUIRED := node-sass browser-sync imagemin-cli svgo postcss-cli autoprefixer csso-cli
 
 help:
 	@echo
