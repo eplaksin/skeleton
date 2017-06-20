@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "autoprefixer": "7.1.*",
+    "csso-cli": "1.0.*",
+    "imagemin-cli": "3.0.*",
+    "node-sass": "4.5.*",
+    "postcss-cli": "4.1.*",
+    "svgo": "0.7.*"
+  },
+  "dependencies": {
+    "browser-sync": "2.18.*"
+  }
+}
