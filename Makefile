@@ -10,7 +10,7 @@ help:
 	@echo "make setup     Install necessary npm packages"
 	@echo "make clean     Remove \"dist\" directory"
 	@echo "make build     Build the project into \"dist\" directory"
-	@echo "make dev       Run node-sass (on watch mode) and browser-sync to ease the developing process"
+	@echo "make dev       Run PostCSS (in watch mode) and browser-sync to ease the developing process"
 	@echo
 
 setup:
@@ -33,17 +33,15 @@ build-start:
 	@mkdir $(DIST)
 
 build-html:
-	@echo -n "Copying HTML files... $0"
+	@echo -n "Processing HTML files... $0"
 	@cp $(SRC)/*.html $(DIST)
 	@echo "Done"
 	@echo
 
 build-css:
-	@echo -n "Compiling SCSS files... $0"
+	@echo -n "Processing CSS files... $0"
 	@mkdir $(DIST)/css
-	@node-sass $(SRC)/css/style.scss | \
-		postcss --no-map --use autoprefixer --autoprefixer.browsers "> 1%, last 2 versions" 2>/dev/null | \
-		csso -o $(DIST)/css/style.css &>/dev/null
+	@postcss $(SRC)/css/app.css --no-map --use postcss-import autoprefixer postcss-csso  --autoprefixer.browsers "> 1%, last 2 versions" --output $(DIST)/css/style.css 2>/dev/null
 	@echo "Done"
 	@echo
 
@@ -69,8 +67,7 @@ show:
 	@browser-sync start --server "$(DIST)" --directory
 
 watch:
-	@node-sass $(SRC)/css/style.scss $(SRC)/css/style.css --source-map true
-	@node-sass $(SRC)/css/style.scss -wo $(SRC)/css/ --source-map true &
+	@postcss $(SRC)/css/app.css --use postcss-import --watch --map --output $(SRC)/css/style.css &
 
 dev: watch
 	@browser-sync start --server "$(SRC)" --directory --files="$(SRC)/css/style.css, $(SRC)/*.html, $(SRC)/js/*.js"
