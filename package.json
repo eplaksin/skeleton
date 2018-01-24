@@ -3,11 +3,11 @@
     "imagemin-cli": "3.0.*",
     "postcss-cli": "4.1.*",
     "postcss-cssnext": "3.1.*",
-    "postcss-csso": "2.0.*",
+    "postcss-csso": "3.0.*",
     "postcss-import": "11.0.*",
     "svgo": "0.7.*"
   },
   "dependencies": {
-    "browser-sync": "2.18.*"
+    "browser-sync": "2.22.*"
   }
 }
