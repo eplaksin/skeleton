@@ -41,7 +41,7 @@ build-html:
 build-css:
 	@echo -n "Processing CSS files... $0"
 	@mkdir $(DIST)/css
-	@postcss $(SRC)/css/app.css --no-map --use postcss-import autoprefixer postcss-csso  --autoprefixer.browsers "> 1%, last 2 versions" --output $(DIST)/css/style.css 2>/dev/null
+	@postcss $(SRC)/css/app.css --no-map --use postcss-import postcss-cssnext postcss-csso  --postcss-cssnext.browsers "> 1%, last 2 versions, Firefox ESR" --output $(DIST)/css/style.css 2>/dev/null
 	@echo "Done"
 	@echo
 
